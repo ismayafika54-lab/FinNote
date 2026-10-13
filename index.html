@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FinNote Catatan Keuangan</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span class="logo-icon">💗</span>
+            <span>FinNote</span>
+        </div>
+
+        <nav id="navMenu">
+
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#dashboard" class="nav-link">Dashboard</a>
+            <a href="#catatan" class="nav-link">Catatan</a>
+            <a href="#statistik" class="nav-link">Statistik</a>
+            <a href="#tips" class="nav-link">Tips</a>
+            <a href="#profile" class="nav-link">Profile</a>
+
+        </nav>
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    </header>
+
+
+    <!-- ================= HOME ================= -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-text">
+
+                <span class="small-title">
+                    ✨ Kelola keuangan dengan lebih mudah
+                </span>
+
+                <h1>
+                    Catat Keuanganmu,<br>
+                    <span>Raih Impianmu.</span>
+                </h1>
+
+                <p>
+                    FinNote membantu kamu mencatat pemasukan,
+                    pengeluaran, dan melihat kondisi keuangan
+                    dengan cara yang simpel dan menyenangkan.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#catatan" class="btn-primary">
+                        + Tambah Transaksi
+                    </a>
+
+                    <a href="#dashboard" class="btn-secondary">
+                        Lihat Dashboard
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-card">
+
+                <div class="wallet-icon">
+                    💰
+                </div>
+
+                <p>Total Saldo</p>
+
+                <h2 id="heroBalance">
+                    Rp 0
+                </h2>
+
+                <div class="mini-info">
+
+                    <div>
+                        <span>↗ Pemasukan</span>
+                        <strong id="heroIncome">Rp 0</strong>
+                    </div>
+
+                    <div>
+                        <span>↘ Pengeluaran</span>
+                        <strong id="heroExpense">Rp 0</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <section id="dashboard" class="section">
+
+        <div class="section-heading">
+
+            <span>OVERVIEW</span>
+
+            <h2>Dashboard Keuangan</h2>
+
+            <p>
+                Pantau kondisi keuanganmu dengan mudah.
+            </p>
+
+        </div>
+
+
+        <div class="summary-grid">
+
+            <div class="summary-card income-card">
+
+                <div class="summary-icon">
+                    💰
+                </div>
+
+                <div>
+                    <p>Total Pemasukan</p>
+                    <h3 id="totalIncome">Rp 0</h3>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card expense-card">
+
+                <div class="summary-icon">
+                    💸
+                </div>
+
+                <div>
+                    <p>Total Pengeluaran</p>
+                    <h3 id="totalExpense">Rp 0</h3>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card balance-card">
+
+                <div class="summary-icon">
+                    💗
+                </div>
+
+                <div>
+                    <p>Saldo Saat Ini</p>
+                    <h3 id="totalBalance">Rp 0</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-bottom">
+
+            <div class="info-card">
+
+                <div class="card-title">
+                    <div>
+                        <span>💡</span>
+                        <h3>Financial Insight</h3>
+                    </div>
+                </div>
+
+                <p id="financialInsight">
+                    Belum ada transaksi. Yuk mulai catat keuanganmu!
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="card-title">
+                    <div>
+                        <span>📌</span>
+                        <h3>Transaksi Terakhir</h3>
+                    </div>
+                </div>
+
+                <div id="recentTransactions">
+
+                    <p class="empty-text">
+                        Belum ada transaksi.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CATATAN KEUANGAN ================= -->
+
+    <section id="catatan" class="section pink-section">
+
+        <div class="section-heading">
+
+            <span>MY FINANCE</span>
+
+            <h2>Catatan Keuangan</h2>
+
+            <p>
+                Catat setiap pemasukan dan pengeluaranmu.
+            </p>
+
+        </div>
+
+
+        <div class="transaction-container">
+
+
+            <!-- FORM TRANSAKSI -->
+
+            <div class="form-card">
+
+                <h3>✨ Tambah Transaksi</h3>
+
+                <p class="form-description">
+                    Masukkan transaksi keuanganmu di bawah ini.
+                </p>
+
+
+                <form id="transactionForm">
+
+                    <label>
+                        Jenis Transaksi
+                    </label>
+
+                    <select id="transactionType" required>
+
+                        <option value="">
+                            Pilih jenis transaksi
+                        </option>
+
+                        <option value="income">
+                            Pemasukan
+                        </option>
+
+                        <option value="expense">
+                            Pengeluaran
+                        </option>
+
+                    </select>
+
+
+                    <label>
+                        Nama Transaksi
+                    </label>
+
+                    <input
+                        type="text"
+                        id="transactionName"
+                        placeholder="Contoh: Gaji, Makan, Transportasi..."
+                        required
+                    >
+
+
+                    <label>
+                        Jumlah
+                    </label>
+
+                    <input
+                        type="number"
+                        id="transactionAmount"
+                        placeholder="Masukkan jumlah"
+                        min="1"
+                        required
+                    >
+
+
+                    <label>
+                        Tanggal
+                    </label>
+
+                    <input
+                        type="date"
+                        id="transactionDate"
+                        required
+                    >
+
+
+                    <button type="submit" class="submit-btn">
+                        + Simpan Transaksi
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- TABEL TRANSAKSI -->
+
+            <div class="table-card">
+
+                <div class="table-header">
+
+                    <div>
+
+                        <h3>📋 Daftar Transaksi</h3>
+
+                        <p>
+                            Riwayat transaksi keuanganmu.
+                        </p>
+
+                    </div>
+
+                    <input
+                        type="text"
+                        id="searchTransaction"
+                        placeholder="🔍 Cari transaksi..."
+                    >
+
+                </div>
+
+
+                <div class="filter-buttons">
+
+                    <button
+                        class="filter-btn active"
+                        data-filter="all">
+                        Semua
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="income">
+                        Pemasukan
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="expense">
+                        Pengeluaran
+                    </button>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Tanggal</th>
+                                <th>Transaksi</th>
+                                <th>Jenis</th>
+                                <th>Jumlah</th>
+                                <th>Aksi</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="transactionTable">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div
+                    id="emptyTransaction"
+                    class="empty-table">
+
+                    <div>📝</div>
+
+                    <h3>Belum ada transaksi</h3>
+
+                    <p>
+                        Tambahkan transaksi pertamamu
+                        menggunakan form di sebelah kiri.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= STATISTIK ================= -->
+
+    <section id="statistik" class="section">
+
+        <div class="section-heading">
+
+            <span>STATISTICS</span>
+
+            <h2>Statistik Keuangan</h2>
+
+            <p>
+                Lihat perkembangan keuanganmu.
+            </p>
+
+        </div>
+
+
+        <div class="statistics-grid">
+
+            <div class="chart-card">
+
+                <div class="chart-header">
+
+                    <div>
+
+                        <h3>Perbandingan Keuangan</h3>
+
+                        <p>
+                            Pemasukan dan pengeluaran
+                        </p>
+
+                    </div>
+
+                    <span>📊</span>
+
+                </div>
+
+                <div
+                    id="barChart"
+                    class="bar-chart">
+                </div>
+
+            </div>
+
+
+            <div class="statistics-info">
+
+                <div class="stat-info-card">
+
+                    <span>💰</span>
+
+                    <div>
+
+                        <p>Pemasukan</p>
+
+                        <strong id="statIncome">
+                            Rp 0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-info-card">
+
+                    <span>💸</span>
+
+                    <div>
+
+                        <p>Pengeluaran</p>
+
+                        <strong id="statExpense">
+                            Rp 0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-info-card">
+
+                    <span>💗</span>
+
+                    <div>
+
+                        <p>Saldo</p>
+
+                        <strong id="statBalance">
+                            Rp 0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TIPS KEUANGAN ================= -->
+
+    <section id="tips" class="section pink-section">
+
+        <div class="section-heading">
+
+            <span>FINANCIAL TIPS</span>
+
+            <h2>Tips Keuangan</h2>
+
+            <p>
+                Kebiasaan kecil hari ini bisa membantu
+                membuat kondisi keuanganmu lebih baik.
+            </p>
+
+        </div>
+
+
+        <div class="tips-grid">
+
+
+            <!-- TIPS 1 -->
+
+            <article class="tip-card">
+
+                <img
+                    src="tips1.jpg"
+                    alt="Tips membuat anggaran keuangan">
+
+                <div class="tip-content">
+
+                    <span>💰 TIPS 01</span>
+
+                    <h3>
+                        Buat Anggaran Bulanan
+                    </h3>
+
+                    <p>
+                        Tentukan batas pengeluaran setiap bulan
+                        agar uang tidak habis tanpa disadari.
+                    </p>
+
+                    <button
+                        onclick="openTip(
+                        'Buat Anggaran Bulanan',
+                        'Mulailah dengan mencatat pemasukan dan kebutuhan utama setiap bulan. Setelah itu, tentukan batas pengeluaran untuk kebutuhan, keinginan, dan tabungan.'
+                        )">
+
+                        Baca selengkapnya →
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- TIPS 2 -->
+
+            <article class="tip-card">
+
+                <img
+                    src="tips2.jpg"
+                    alt="Tips menabung">
+
+                <div class="tip-content">
+
+                    <span>🌷 TIPS 02</span>
+
+                    <h3>
+                        Biasakan Menabung
+                    </h3>
+
+                    <p>
+                        Sisihkan sebagian uang di awal,
+                        bukan menunggu sampai uang tersisa.
+                    </p>
+
+                    <button
+                        onclick="openTip(
+                        'Biasakan Menabung',
+                        'Tidak harus langsung dalam jumlah besar. Mulailah dengan nominal kecil tetapi konsisten setiap kali menerima pemasukan.'
+                        )">
+
+                        Baca selengkapnya →
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- TIPS 3 -->
+
+            <article class="tip-card">
+
+                <img
+                    src="tips3.jpg"
+                    alt="Tips menghindari pengeluaran impulsif">
+
+                <div class="tip-content">
+
+                    <span>🛍️ TIPS 03</span>
+
+                    <h3>
+                        Hindari Belanja Impulsif
+                    </h3>
+
+                    <p>
+                        Jangan langsung membeli sesuatu hanya
+                        karena sedang tertarik atau ada promo.
+                    </p>
+
+                    <button
+                        onclick="openTip(
+                        'Hindari Belanja Impulsif',
+                        'Gunakan aturan sederhana seperti menunggu 24 jam sebelum membeli barang yang bukan kebutuhan. Cara ini dapat membantu mengurangi pembelian yang tidak direncanakan.'
+                        )">
+
+                        Baca selengkapnya →
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- TIPS 4 -->
+
+            <article class="tip-card">
+
+                <img
+                    src="tips4.jpg"
+                    alt="Tips dana darurat">
+
+                <div class="tip-content">
+
+                    <span>🪙 TIPS 04</span>
+
+                    <h3>
+                        Siapkan Dana Darurat
+                    </h3>
+
+                    <p>
+                        Dana darurat dapat membantu ketika
+                        terjadi kebutuhan yang tidak terduga.
+                    </p>
+
+                    <button
+                        onclick="openTip(
+                        'Siapkan Dana Darurat',
+                        'Sisihkan uang secara bertahap untuk dana darurat. Simpan dana tersebut di tempat yang mudah diakses tetapi tidak mudah digunakan untuk belanja sehari-hari.'
+                        )">
+
+                        Baca selengkapnya →
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- TIPS 5 -->
+
+            <article class="tip-card">
+
+                <img
+                    src="tips5.jpg"
+                    alt="Tips mencatat keuangan">
+
+                <div class="tip-content">
+
+                    <span>📝 TIPS 05</span>
+
+                    <h3>
+                        Catat Semua Pengeluaran
+                    </h3>
+
+                    <p>
+                        Dengan mencatat transaksi, kamu bisa
+                        mengetahui ke mana uangmu digunakan.
+                    </p>
+
+                    <button
+                        onclick="openTip(
+                        'Catat Semua Pengeluaran',
+                        'Biasakan mencatat pengeluaran sekecil apa pun. Dengan begitu kamu dapat melihat pola pengeluaran dan mengetahui bagian mana yang perlu dikurangi.'
+                        )">
+
+                        Baca selengkapnya →
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROFILE ================= -->
+
+    <section id="profile" class="section profile-section">
+
+        <div class="section-heading">
+
+            <span>ABOUT ME</span>
+
+            <h2>Profile</h2>
+
+            <p>
+                Kenalan dengan pembuat FinNote.
+            </p>
+
+        </div>
+
+
+        <div class="profile-card">
+
+            <div class="profile-avatar">
+                💗
+            </div>
+
+
+            <div class="profile-info">
+
+                <span class="profile-label">
+                    FINNOTE CREATOR
+                </span>
+
+                <h2>
+                    Ismaya Pika
+                </h2>
+
+                <p class="profile-campus">
+                    🎓 Universitas Pamulang
+                </p>
+
+                <p class="profile-study">
+                    Sistem Informasi · Semester 5
+                </p>
+
+                <p class="profile-description">
+                    FinNote dibuat sebagai website sederhana
+                    untuk membantu mencatat dan mengelola
+                    keuangan sehari-hari dengan tampilan
+                    yang simpel, nyaman, dan mudah digunakan.
+                </p>
+
+
+                <div class="profile-links">
+
+                    <a
+                        href="https://jasdor-byfika.vercel.app"
+                        class="profile-link jasdor-link"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        🛍️
+
+                        <div>
+
+                            <strong>
+                                Jasdor by.fika
+                            </strong>
+
+                            <small>
+                                Kunjungi website
+                            </small>
+
+                        </div>
+
+                        <span>↗</span>
+
+                    </a>
+
+
+                    <a
+                        href="https://wa.me/6289525331719"
+                        class="profile-link whatsapp-link"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        💬
+
+                        <div>
+
+                            <strong>
+                                WhatsApp
+                            </strong>
+
+                            <small>
+                                Hubungi melalui WhatsApp
+                            </small>
+
+                        </div>
+
+                        <span>↗</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+
+                <h3>
+                    💗 FinNote
+                </h3>
+
+                <p>
+                    Catat, atur, dan pahami keuanganmu
+                    dengan lebih mudah.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Quick Menu
+                </h4>
+
+                <a href="#home">Home</a>
+                <a href="#catatan">Catatan</a>
+                <a href="#statistik">Statistik</a>
+                <a href="#tips">Tips Keuangan</a>
+                <a href="#profile">Profile</a>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Contact
+                </h4>
+
+                <a
+                    href="https://wa.me/6289525331719"
+                    target="_blank">
+
+                    💬 WhatsApp
+
+                </a>
+
+                <a
+                    href="https://jasdor-byfika.vercel.app"
+                    target="_blank">
+
+                    🛍️ Jasdor by.fika
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 FinNote · Made with 💗
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= MODAL TIPS ================= -->
+
+    <div
+        id="tipModal"
+        class="modal">
+
+        <div class="modal-content">
+
+            <button
+                class="close-modal"
+                onclick="closeTip()">
+
+                ×
+
+            </button>
+
+            <div class="modal-icon">
+                💗
+            </div>
+
+            <h2 id="modalTitle">
+                Tips Keuangan
+            </h2>
+
+            <p id="modalText">
+                Tips keuangan.
+            </p>
+
+            <button
+                class="modal-btn"
+                onclick="closeTip()">
+
+                Mengerti ✨
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
