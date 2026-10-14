@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Tips Keuangan - FinNote</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        <span class="logo-icon">💗</span>
+        <span>FinNote</span>
+    </div>
+
+    <nav id="navMenu">
+
+        <a href="index.html" class="nav-link">
+            Home
+        </a>
+
+        <a href="catatan.html" class="nav-link">
+            Catatan
+        </a>
+
+        <a href="statistik.html" class="nav-link">
+            Statistik
+        </a>
+
+        <a href="tips.html" class="nav-link active">
+            Tips
+        </a>
+
+        <a href="profile.html" class="nav-link">
+            Profile
+        </a>
+
+    </nav>
+
+    <button
+        class="menu-btn"
+        onclick="toggleMenu()">
+
+        ☰
+
+    </button>
+
+</header>
+
+
+<!-- ================= TIPS KEUANGAN ================= -->
+
+<section class="section pink-section">
+
+    <div class="section-heading">
+
+        <span>
+            FINANCIAL TIPS
+        </span>
+
+        <h2>
+            Tips Keuangan
+        </h2>
+
+        <p>
+            Kebiasaan kecil hari ini bisa membantu
+            membuat kondisi keuanganmu lebih baik.
+        </p>
+
+    </div>
+
+
+    <div class="tips-grid">
+
+
+        <!-- ================= TIPS 1 ================= -->
+
+        <article class="tip-card">
+
+            <img
+                src="tips1.jpg"
+                alt="Tips membuat anggaran keuangan">
+
+            <div class="tip-content">
+
+                <span>
+                    💰 TIPS 01
+                </span>
+
+                <h3>
+                    Buat Anggaran Bulanan
+                </h3>
+
+                <p>
+                    Tentukan batas pengeluaran setiap bulan
+                    agar uang tidak habis tanpa disadari.
+                </p>
+
+                <button
+                    onclick="openTip(
+                        'Buat Anggaran Bulanan',
+                        'Mulailah dengan mencatat pemasukan dan kebutuhan utama setiap bulan. Setelah itu, tentukan batas pengeluaran untuk kebutuhan, keinginan, dan tabungan.'
+                    )">
+
+                    Baca selengkapnya →
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- ================= TIPS 2 ================= -->
+
+        <article class="tip-card">
+
+            <img
+                src="tips2.jpg"
+                alt="Tips menabung">
+
+            <div class="tip-content">
+
+                <span>
+                    🌷 TIPS 02
+                </span>
+
+                <h3>
+                    Biasakan Menabung
+                </h3>
+
+                <p>
+                    Sisihkan sebagian uang di awal,
+                    bukan menunggu sampai uang tersisa.
+                </p>
+
+                <button
+                    onclick="openTip(
+                        'Biasakan Menabung',
+                        'Tidak harus langsung dalam jumlah besar. Mulailah dengan nominal kecil tetapi konsisten setiap kali menerima pemasukan.'
+                    )">
+
+                    Baca selengkapnya →
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- ================= TIPS 3 ================= -->
+
+        <article class="tip-card">
+
+            <img
+                src="tips3.jpg"
+                alt="Tips menghindari pengeluaran impulsif">
+
+            <div class="tip-content">
+
+                <span>
+                    🛍️ TIPS 03
+                </span>
+
+                <h3>
+                    Hindari Belanja Impulsif
+                </h3>
+
+                <p>
+                    Jangan langsung membeli sesuatu hanya
+                    karena sedang tertarik atau ada promo.
+                </p>
+
+                <button
+                    onclick="openTip(
+                        'Hindari Belanja Impulsif',
+                        'Gunakan aturan sederhana seperti menunggu 24 jam sebelum membeli barang yang bukan kebutuhan. Cara ini dapat membantu mengurangi pembelian yang tidak direncanakan.'
+                    )">
+
+                    Baca selengkapnya →
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- ================= TIPS 4 ================= -->
+
+        <article class="tip-card">
+
+            <img
+                src="tips4.jpg"
+                alt="Tips dana darurat">
+
+            <div class="tip-content">
+
+                <span>
+                    🪙 TIPS 04
+                </span>
+
+                <h3>
+                    Siapkan Dana Darurat
+                </h3>
+
+                <p>
+                    Dana darurat dapat membantu ketika
+                    terjadi kebutuhan yang tidak terduga.
+                </p>
+
+                <button
+                    onclick="openTip(
+                        'Siapkan Dana Darurat',
+                        'Sisihkan uang secara bertahap untuk dana darurat. Simpan dana tersebut di tempat yang mudah diakses tetapi tidak mudah digunakan untuk belanja sehari-hari.'
+                    )">
+
+                    Baca selengkapnya →
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- ================= TIPS 5 ================= -->
+
+        <article class="tip-card">
+
+            <img
+                src="tips5.jpg"
+                alt="Tips mencatat keuangan">
+
+            <div class="tip-content">
+
+                <span>
+                    📝 TIPS 05
+                </span>
+
+                <h3>
+                    Catat Semua Pengeluaran
+                </h3>
+
+                <p>
+                    Dengan mencatat transaksi, kamu bisa
+                    mengetahui ke mana uangmu digunakan.
+                </p>
+
+                <button
+                    onclick="openTip(
+                        'Catat Semua Pengeluaran',
+                        'Biasakan mencatat pengeluaran sekecil apa pun. Dengan begitu kamu dapat melihat pola pengeluaran dan mengetahui bagian mana yang perlu dikurangi.'
+                    )">
+
+                    Baca selengkapnya →
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+
+        <div>
+
+            <h3>
+                💗 FinNote
+            </h3>
+
+            <p>
+                Catat, atur, dan pahami keuanganmu
+                dengan lebih mudah.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Quick Menu
+            </h4>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="catatan.html">
+                Catatan
+            </a>
+
+            <a href="statistik.html">
+                Statistik
+            </a>
+
+            <a href="tips.html">
+                Tips Keuangan
+            </a>
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Contact
+            </h4>
+
+            <a
+                href="https://wa.me/6289525331719"
+                target="_blank">
+
+                💬 WhatsApp
+
+            </a>
+
+            <a
+                href="https://jasdor-byfika.vercel.app"
+                target="_blank">
+
+                🛍️ Jasdor by.fika
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 FinNote · Made with 💗
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= MODAL TIPS ================= -->
+
+<div
+    id="tipModal"
+    class="modal">
+
+    <div class="modal-content">
+
+        <button
+            class="close-modal"
+            onclick="closeTip()">
+
+            ×
+
+        </button>
+
+
+        <div class="modal-icon">
+            💗
+        </div>
+
+
+        <h2 id="modalTitle">
+            Tips Keuangan
+        </h2>
+
+
+        <p id="modalText">
+            Tips keuangan.
+        </p>
+
+
+        <button
+            class="modal-btn"
+            onclick="closeTip()">
+
+            Mengerti ✨
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

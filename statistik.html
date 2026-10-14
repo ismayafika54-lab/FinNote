@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Statistik Keuangan - FinNote</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        <span class="logo-icon">💗</span>
+        <span>FinNote</span>
+    </div>
+
+    <nav id="navMenu">
+
+        <a href="index.html" class="nav-link">
+            Home
+        </a>
+
+        <a href="catatan.html" class="nav-link">
+            Catatan
+        </a>
+
+        <a href="statistik.html" class="nav-link active">
+            Statistik
+        </a>
+
+        <a href="tips.html" class="nav-link">
+            Tips
+        </a>
+
+        <a href="profile.html" class="nav-link">
+            Profile
+        </a>
+
+    </nav>
+
+    <button
+        class="menu-btn"
+        onclick="toggleMenu()">
+
+        ☰
+
+    </button>
+
+</header>
+
+
+<!-- ================= STATISTIK ================= -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span>
+            STATISTICS
+        </span>
+
+        <h2>
+            Statistik Keuangan
+        </h2>
+
+        <p>
+            Lihat perkembangan keuanganmu.
+        </p>
+
+    </div>
+
+
+    <div class="statistics-grid">
+
+
+        <!-- ================= GRAFIK ================= -->
+
+        <div class="chart-card">
+
+            <div class="chart-header">
+
+                <div>
+
+                    <h3>
+                        Perbandingan Keuangan
+                    </h3>
+
+                    <p>
+                        Pemasukan dan pengeluaran
+                    </p>
+
+                </div>
+
+                <span>
+                    📊
+                </span>
+
+            </div>
+
+
+            <div
+                id="barChart"
+                class="bar-chart">
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= INFORMASI ================= -->
+
+        <div class="statistics-info">
+
+
+            <div class="stat-info-card">
+
+                <span>
+                    💰
+                </span>
+
+                <div>
+
+                    <p>
+                        Pemasukan
+                    </p>
+
+                    <strong id="statIncome">
+                        Rp 0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-info-card">
+
+                <span>
+                    💸
+                </span>
+
+                <div>
+
+                    <p>
+                        Pengeluaran
+                    </p>
+
+                    <strong id="statExpense">
+                        Rp 0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-info-card">
+
+                <span>
+                    💗
+                </span>
+
+                <div>
+
+                    <p>
+                        Saldo
+                    </p>
+
+                    <strong id="statBalance">
+                        Rp 0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+
+        <div>
+
+            <h3>
+                💗 FinNote
+            </h3>
+
+            <p>
+                Catat, atur, dan pahami keuanganmu
+                dengan lebih mudah.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Quick Menu
+            </h4>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="catatan.html">
+                Catatan
+            </a>
+
+            <a href="statistik.html">
+                Statistik
+            </a>
+
+            <a href="tips.html">
+                Tips Keuangan
+            </a>
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Contact
+            </h4>
+
+            <a
+                href="https://wa.me/6289525331719"
+                target="_blank">
+
+                💬 WhatsApp
+
+            </a>
+
+            <a
+                href="https://jasdor-byfika.vercel.app"
+                target="_blank">
+
+                🛍️ Jasdor by.fika
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 FinNote · Made with 💗
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
